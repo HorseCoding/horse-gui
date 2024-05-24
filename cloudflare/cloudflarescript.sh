@@ -1,4 +1,5 @@
 # builds the website
+cd ..
 npm i -g pnpm@v6
 pnpm i --shamefully-hoist
 npm i -g cross-env
