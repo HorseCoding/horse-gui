@@ -1,4 +1,0 @@
-[build]
-command = "NODE_ENV=production webpack --bail"
-install_command = "npm i -g pnpm@v6 && export NODE_OPTIONS=--openssl-legacy-provider && pnpm i --shamefully-hoist --force"
-pages_build_output_dir = "build"
