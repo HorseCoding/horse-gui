@@ -81,7 +81,7 @@
     "redux": "3.7.2",
     "redux-throttle": "0.1.1",
     "scratch-audio": "github:PenguinMod/PenguinMod-Audio#develop",
-    "scratch-blocks": "github:EspressoBlocks/espresso-blocks#main",
+    "scratch-blocks": "github:EspressoBlocks/espresso-blocks",
     "scratch-paint": "github:EspressoBlocks/espresso-drawing#main",
     "scratch-render": "github:PenguinMod/PenguinMod-Render#develop",
     "scratch-render-fonts": "github:PenguinMod/penguinmod-render-fonts#master",
