@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
 import appTarget from '../app-target';
 import { getInitialDarkMode } from '../../lib/tw-theme-hoc.jsx';
-import { AppBar, Box, Button, Container, Switch, Toolbar, Typography } from '@mui/material';
 import Swal from 'sweetalert2';
 import './devSettings.css';
 
@@ -47,40 +45,34 @@ const DevSettings = () => {
     };
 
     return (
-        <Box sx={{ flexGrow: 1 }}>
-            <AppBar position="static">
-                <Toolbar>
-                    <Typography
-                        variant="h6"
-                        noWrap
-                        component="div"
-                        sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
-                    >
-                        Espresso Development Settings
-                    </Typography>
-                    <Button color="inherit" onClick={onClickNote}>Please note</Button>
-                </Toolbar>
-            </AppBar>
+        <div className="dev-settings">
+            <header className="app-bar">
+                <div className="toolbar">
+                    <h1 className="title">Espresso Development Settings</h1>
+                    <button className="note-button" onClick={onClickNote}>Please note</button>
+                </div>
+            </header>
 
-            <br />
-
-            <Container maxWidth="lg">
+            <main className="content">
                 {settingsConfig.map(setting => (
                     <div className="option" key={setting.key}>
-                        <Typography variant="h6" noWrap component="div">
-                            {setting.label}
-                        </Typography>
-                        <Switch
-                            onChange={() => handleChange(setting.key, setting.storageKey)}
-                            checked={settings[setting.key] || false}
-                        />
+                        <h2 className="option-label">{setting.label}</h2>
+                        <label className="switch">
+                            <input
+                                type="checkbox"
+                                onChange={() => handleChange(setting.key, setting.storageKey)}
+                                checked={settings[setting.key] || false}
+                            />
+                            <span className="slider round"></span>
+                        </label>
                     </div>
                 ))}
-            </Container>
-        </Box>
+            </main>
+        </div>
     );
 };
 
 document.body.setAttribute('theme', getInitialDarkMode() ? 'dark' : 'light');
 
 ReactDOM.render(<DevSettings />, appTarget);
+
