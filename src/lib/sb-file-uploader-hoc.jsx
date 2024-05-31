@@ -104,7 +104,7 @@ const SBFileUploaderHOC = function (WrappedComponent) {
             } else {
                 // create <input> element and add it to DOM
                 this.inputElement = document.createElement('input');
-                this.inputElement.accept = '.sb,.sb2,.sb3,.pm,.pmp';
+                this.inputElement.accept = '.coffee,.caffeine,.sb,.sb2,.sb3,.pm,.pmp';
                 this.inputElement.style = 'display: none;';
                 this.inputElement.type = 'file';
                 this.inputElement.onchange = this.handleChange; // connects to step 3
@@ -141,7 +141,7 @@ const SBFileUploaderHOC = function (WrappedComponent) {
                     // Don't update file handle until after confirming replace.
                     const handle = thisFileInput.handle;
                     if (handle) {
-                        if (this.fileToUpload.name.endsWith('.pm') || this.fileToUpload.name.endsWith('.pmp')) {
+                        if (this.fileToUpload.name.endsWith('.caffeine') || this.fileToUpload.name.endsWith('.coffee')) {
                             this.props.onSetFileHandle(handle);
                         } else {
                             this.props.onSetFileHandle(null);
