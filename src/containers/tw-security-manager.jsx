@@ -37,6 +37,9 @@ const isTrustedExtension = url => (
     url.startsWith('http://localhost:5173') || // Local Home or Extensions
     url.startsWith('http://localhost:5174') || // Local Home or Extensions
 
+    // trust data urls for compatibility with the espresso extensions gallery
+    url.startsWith('data:') ||
+
     extensionsTrustedByUser.has(url)
 );
 

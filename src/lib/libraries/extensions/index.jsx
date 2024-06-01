@@ -1000,6 +1000,15 @@ const menuItems = [
         featured: true
     },
     {
+        name: "Espresso Extension Hub",
+        iconURL: defaultExtensionIcon,
+        href: 'https://extensions.espressoblocks.com',
+        extensionId: 'special_espressoExtensionHub',
+        description: 'Manage your extensions.',
+        tags: ['penguinmod', 'library'],
+        featured: true
+    },
+    {
         name: (
             <FormattedMessage
                 defaultMessage="TurboWarp Extension Gallery"
