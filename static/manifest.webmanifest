@@ -1,19 +1,7 @@
 {
-  "short_name": "PenguinMod",
-  "name": "PenguinMod",
-  "description": "Mod of TurboWarp that was made to allow for really cool projects.",
-  "icons": [
-    {
-      "src": "images/192.png",
-      "type": "image/png",
-      "sizes": "192x192"
-    },
-    {
-      "src": "images/512.png",
-      "type": "image/png",
-      "sizes": "512x512"
-    }
-  ],
+  "short_name": "Espresso",
+  "name": "Espresso",
+  "description": "Mod of PenguinMod that was made to allow for really cool projects.",
   "start_url": "editor",
   "background_color": "#333333",
   "display": "standalone",
