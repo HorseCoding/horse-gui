@@ -54,9 +54,19 @@ const Credits = () => (
     <main className={styles.main}>
         <header className={styles.headerContainer}>
             <h1 className={styles.headerText}>
-                PenguinMod Credits
+                Espresso Credits
             </h1>
         </header>
+        <section>
+            <h1>Espresso</h1>
+        </section>
+        <section>
+            <h2>Developers</h2>
+            <UserList users={UserData.espressoDevs} />
+            <p>Right now it's only me who works on the project</p>
+            <h2>Hosting</h2>
+            <p>For the editor we use <strong>GitHub Pages</strong> to host it but for everything else we use <strong>Cloudflare Pages</strong></p>
+        </section>
         <section>
             <h1>PenguinMod</h1>
         </section>

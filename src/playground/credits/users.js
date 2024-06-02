@@ -368,6 +368,10 @@ const pmExtensionDevelopers = [
     'Ashimee'
 ].map(fromHardcodedGithub);
 
+const espressoDevs = [
+    'dumorando'
+].map(fromHardcodedGithub);
+
 export default {
     addonDevelopers: shuffle(addonDevelopers),
     pmDevelopers: shuffle(pmDevelopers),
@@ -376,5 +380,6 @@ export default {
     pmExtensionDevelopers: shuffle(pmExtensionDevelopers),
     pmApiDevelopers: shuffle(pmApiDevelopers),
     pmTranslators: shuffle(pmTranslators),
-    pmPullRequestDevelopers: shuffle(pmPullRequestDevelopers)
+    pmPullRequestDevelopers: shuffle(pmPullRequestDevelopers),
+    espressoDevs: shuffle(espressoDevs)
 };

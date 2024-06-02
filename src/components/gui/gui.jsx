@@ -489,6 +489,7 @@ const GUIComponent = props => {
                         enableCommunity={enableCommunity}
                         isShared={isShared}
                         logo={logo}
+                        isDark={isDark}
                         renderLogin={renderLogin}
                         showComingSoon={showComingSoon}
                         onClickAbout={onClickAbout}

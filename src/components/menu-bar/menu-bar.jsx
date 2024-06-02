@@ -76,7 +76,8 @@ import dropdownCaret from './dropdown-caret.svg';
 import languageIcon from '../language-selector/language-icon.svg';
 import aboutIcon from './icon--about.svg';
 import errorIcon from './tw-error.svg';
-import themeIcon from './tw-moon.svg';
+import darkModeIcon from './tw-moon.svg';
+import lightModeIcon from './espresso-light.svg';
 
 import scratchLogo from './scratch-logo.svg';
 
@@ -498,12 +499,21 @@ class MenuBar extends React.Component {
                                 className={classNames(styles.menuBarItem, styles.hoverable)}
                                 onMouseUp={this.props.onClickTheme}
                             >
-                                <img
-                                    src={themeIcon}
-                                    width="24"
-                                    height="24"
-                                    draggable={false}
-                                />
+                                {this.props.isDark ? (
+                                    <img
+                                        src={lightModeIcon}
+                                        width="24"
+                                        height="24"
+                                        draggable={false}
+                                    />
+                                ) : (
+                                    <img
+                                        src={darkModeIcon}
+                                        width="24"
+                                        height="24"
+                                        draggable={false}
+                                    />
+                                )}
                             </div>
                         )}
                         {/* tw: display compile errors */}
@@ -938,6 +948,7 @@ class MenuBar extends React.Component {
 
 MenuBar.propTypes = {
     enableSeeInside: PropTypes.bool,
+    isDark: PropTypes.bool,
     onClickSeeInside: PropTypes.func,
     aboutMenuOpen: PropTypes.bool,
     accountMenuOpen: PropTypes.bool,
