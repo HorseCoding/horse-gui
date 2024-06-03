@@ -67,7 +67,7 @@ const base = {
     module: {
         rules: [{
             test: /\.jsx?$/,
-            loader: 'babel-loader',
+            loader: 'esbuild-loader',
             include: [
                 path.resolve(__dirname, 'src'),
                 /node_modules[\\/]scratch-[^\\/]+[\\/]src/,
@@ -75,14 +75,9 @@ const base = {
                 /node_modules[\\/]@vernier[\\/]godirect/
             ],
             options: {
-                // Explicitly disable babelrc so we don't catch various config
-                // in much lower dependencies.
-                babelrc: false,
-                plugins: [
-                    ['react-intl', {
-                        messagesDir: './translations/messages/'
-                    }]],
-                presets: ['@babel/preset-env', '@babel/preset-react']
+                target: 'es2015',
+                minify: true,
+                loader: 'jsx'
             }
         },
         {
