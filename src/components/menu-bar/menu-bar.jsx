@@ -86,6 +86,15 @@ import sharedMessages from '../../lib/shared-messages';
 import SeeInsideButton from './tw-see-inside.jsx';
 import { notScratchDesktop } from '../../lib/isScratchDesktop.js';
 
+//it has es5 syntax cause like i copied it
+function isItAprilFoolDay() {
+    var now = new Date();
+    return (now.getMonth() == 3 && now.getDate() == 1);
+}
+
+const urlParams = new URLSearchParams(location.search);
+const AprilFoolsMode = urlParams.has('prank') || isItAprilFoolDay();
+
 const ariaMessages = defineMessages({
     language: {
         id: 'gui.menuBar.LanguageSelector',
@@ -337,7 +346,35 @@ class MenuBar extends React.Component {
                 break;
         }
     }
+    //this the april fool day thing
+    handleClickMode(effect) {
+        const body = document.body;
+        body.style = '';
+        if (!effect) return;
 
+        // fix some weird sizing, just applies on effects
+        body.style = "width:100%;height:100%;position:fixed;overflow:hidden;";
+        switch (effect) {
+            case 'night':
+                body.style.filter = 'brightness(90%) sepia(100%) hue-rotate(340deg) saturate(400%)';
+                break;
+            case 'blur':
+                body.style.filter = 'blur(4px)';
+                break;
+            case 'comic':
+                body.style.filter = 'brightness(70%) contrast(1000%) grayscale(100%)';
+                break;
+            case 'toxic':
+                body.style.filter = 'sepia(100%) hue-rotate(58deg) saturate(400%)';
+                break;
+            case 'uhd':
+                body.style.filter = 'url("./bloomfilter.svg#bloom")';
+                break;
+            case 'upsidedown':
+                body.style.transform = 'rotateX(180deg) rotateY(180deg)';
+                break;
+        }
+    }
     restoreOptionMessage(deletedItem) {
         switch (deletedItem) {
             case 'Sprite':
@@ -823,6 +860,32 @@ class MenuBar extends React.Component {
                                         />
                                     </MenuItem>
                                 </MenuSection>
+                                {AprilFoolsMode ? (
+                                    <MenuSection>
+                                        <h1>SUPER EDITOR EFFECTS</h1>
+                                        <MenuItem onClick={() => this.handleClickMode()}>
+                                            Disable effects
+                                        </MenuItem>
+                                        <MenuItem onClick={() => this.handleClickMode('night')}>
+                                            Night light
+                                        </MenuItem>
+                                        <MenuItem onClick={() => this.handleClickMode('blur')}>
+                                            JeremyGamer13's eyesight
+                                        </MenuItem>
+                                        <MenuItem onClick={() => this.handleClickMode('comic')}>
+                                            Comicbook
+                                        </MenuItem>
+                                        <MenuItem onClick={() => this.handleClickMode('upsidedown')}>
+                                            Australia
+                                        </MenuItem>
+                                        <MenuItem onClick={() => this.handleClickMode('toxic')}>
+                                            Radioactive
+                                        </MenuItem>
+                                        <MenuItem onClick={() => this.handleClickMode('uhd')}>
+                                            RTX UHD Graphics
+                                        </MenuItem>
+                                    </MenuSection>
+                                ) : null}
                             </MenuBarMenu>
                         </div>
                         {this.props.onClickAddonSettings && (
