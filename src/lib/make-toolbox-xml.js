@@ -1233,6 +1233,7 @@ const operators = function (isInitialSetup) {
         ${blockSeparator}
         <block type="operator_trueBoolean"></block>
         <block type="operator_falseBoolean"></block>
+        <block type="operator_randomBoolean" />
         ${blockSeparator}
         <block type="operator_and"/>
         <block type="operator_or"/>
