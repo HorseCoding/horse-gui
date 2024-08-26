@@ -1,15 +1,5 @@
-## Espresso-gui
-**Espresso is a mod of PenguinMod** designed to add more blocks and features to the editor. **This is still a beta product.**
-
-## Espresso Notes
-The social part of the website is in the repository **EspressoBlocks/espresso-web** (coming soon, espresso is still an unfinished product). <br />
-The servers for Espresso currently run at **https://espressoapi.dumorando.com** (coming soon, espresso is still an unfinished product).
-
-## Contributing
-Do NOT submit extensions here! Adding Extensions to the gallery is **against Espresso's design ideas**. Instead, submit an extension to **EspressoBlocks/espresso-extensions** (coming soon, espresso is still an unfinished product). For anything else, go ahead.
-
-## Get Started
-Clone the repository with `git clone https://github.com/espressoblocks/espresso-gui` then run `bash setup.sh` for a linux environment, and the untested `setup.bat` for a windows environment.
+## Horse-gui
+**HorseCoding is a mod of Espresso** designed to add more blocks and features to the editor. **This is still a beta product.**
 
 ## License
 
